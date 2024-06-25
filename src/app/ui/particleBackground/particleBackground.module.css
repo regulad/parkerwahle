@@ -1,0 +1,28 @@
+.fadeIn /* has to have a camelCase name to be usable in React */
+{
+  animation: fade-in-animation 2s ease-in-out;
+}
+
+.opacityGradient {
+  position: relative;
+}
+
+.opacityGradient::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 0), rgba(255, 255, 255, 1));
+  pointer-events: none;
+}
+
+@keyframes fade-in-animation {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1; /* final opacity */
+  }
+}
