@@ -11,7 +11,7 @@ export default function Blog() {
       <p>
         My blog is coming soon. Please stay tuned and check my&nbsp;
         <a
-          href={[...socials].filter((social) => social.name.startsWith("X")).pop().url}
+          href={[...socials].filter((social) => social.name.startsWith("X")).pop()!.url}
           className="classic-link"
         >
           X

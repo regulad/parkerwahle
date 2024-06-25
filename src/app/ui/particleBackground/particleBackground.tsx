@@ -1,6 +1,6 @@
 "use client";
 
-import {useEffect, useRef, useState} from "react";
+import {useEffect, useState} from "react";
 import Particles, {initParticlesEngine} from "@tsparticles/react";
 import {loadSlim} from "@tsparticles/slim";
 import {Container} from "@tsparticles/engine";
@@ -9,7 +9,6 @@ import styles from "./particleBackground.module.css";
 
 export default function ParticleBackground() {
   const [init, setInit] = useState<boolean>(false);
-  const ref = useRef<HTMLElement | null>(null);
 
   // this should be run only once per application lifetime
   useEffect(() => {
@@ -30,7 +29,6 @@ export default function ParticleBackground() {
         <Particles
           id="tsparticles"
           particlesLoaded={onParticlesLoaded}
-          ref={ref}
           options={{
             fullScreen: {
               enable: false,

@@ -20,7 +20,7 @@ export default function Portfolio() {
         In the meantime, please check my&nbsp;
         &nbsp;
         <a
-          href={[...socials].filter((social) => social.name.startsWith("GitHub")).pop().url}
+          href={[...socials].filter((social) => social.name.startsWith("GitHub")).pop()!.url}
           className="classic-link"
         >
           GitHub

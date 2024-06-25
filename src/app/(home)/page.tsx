@@ -1,9 +1,8 @@
-import Image from "next/image";
+import Image, {StaticImageData} from "next/image";
 import {Button} from "@/components/ui/button";
 import {bio, socials} from "@/app/constants";
 import React from "react";
 import portraitPicture from "@/assets/portrait.jpeg";
-import {StaticRequire} from "next/dist/shared/lib/get-img-props";
 import dynamic from "next/dynamic";
 import Link from "next/link";
 
@@ -37,7 +36,7 @@ export default function Home() {
         </div>
         <div className="flex justify-end">
           <Image
-            src={portraitPicture as StaticRequire}
+            src={portraitPicture as StaticImageData}
             width={400}
             height={400}
             priority={true}
