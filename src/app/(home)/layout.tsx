@@ -1,7 +1,7 @@
 import Link from "next/link";
 import {Button} from "@/components/ui/button";
 import React from "react";
-import {socials} from "@/app/constants";
+import {FiExternalLink} from "react-icons/fi";
 
 export default function Layout({children}: Readonly<{ children: React.ReactNode; }>) {
   return (
@@ -11,27 +11,28 @@ export default function Layout({children}: Readonly<{ children: React.ReactNode;
           <Link href="/" className="text-lg font-medium">
             Parker Wahle
           </Link>
-          <div className="hidden md:flex items-center space-x-4"> {/* TODO: make this a hamburger menu */}
+          {/* Doesn't really matter on mobile */}
+          <div className="hidden md:flex items-center space-x-4">
             <Link href="/portfolio" className="text-muted-foreground hover:text-foreground">
               Portfolio & Case Studies
             </Link>
-            <Link href="/blog" className="text-muted-foreground hover:text-foreground">
-              Blog
-            </Link>
+            <a href="https://regulad0.medium.com/" className="text-muted-foreground hover:text-foreground">
+              Blog&nbsp;<FiExternalLink className="inline w-4 h-4"/>
+            </a>
             <Link href="/contact" className="text-muted-foreground hover:text-foreground">
               Contact
             </Link>
           </div>
         </nav>
         <div className="flex items-center space-x-4">
-          {[...socials].filter((social) => social.isPriority).map((social) => (
-            <a href={social.url} key={social.name} title={social.name}>
-              <Button variant="outline" size="icon">
-                {React.createElement(social.iconComponent, {className: "w-6 h-6"})}
-                <span className="sr-only">{social.name}</span>
-              </Button>
-            </a>
-          ))}
+          {/* we want the linktree button here */}
+          <a href="https://linktr.ee/regulad" className="text-muted-foreground hover:text-foreground">
+            <Button variant="outline">
+              <span>Linktree</span>
+              &nbsp;
+              <FiExternalLink className="w-4 h-4"/>
+            </Button>
+          </a>
         </div>
       </header>
       {children}
