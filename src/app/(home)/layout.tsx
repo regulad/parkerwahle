@@ -2,10 +2,12 @@ import Link from "next/link";
 import {Button} from "@/components/ui/button";
 import React from "react";
 import {FiExternalLink} from "react-icons/fi";
+import NotificationCalloutBar from "@/app/ui/notificationCalloutBar";
 
 export default function Layout({children}: Readonly<{ children: React.ReactNode; }>) {
   return (
     <main lang="en">
+      <NotificationCalloutBar/>
       <header className="flex items-center justify-between h-16 px-4 md:px-6 border-b">
         <nav className="flex items-center space-x-6">
           <Link href="/" className="text-lg font-medium">
