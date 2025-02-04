@@ -1,0 +1,8 @@
+{
+  "contacts": [
+    {
+      "matrix_id": "@regulad:regulad.xyz",
+      "role": "m.role.admin"
+    }
+  ]
+}
