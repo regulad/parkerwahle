@@ -1,0 +1,47 @@
+/* These stripes are SO fucked. Like I don't even know why it did this. */
+
+.seg-stripes-top {
+  background: linear-gradient(
+    45deg,
+    transparent 0%,
+    transparent 50%,
+    white 50%,
+    white 58.33%,
+    transparent 58.33%,
+    transparent 66.66%,
+    white 66.66%,
+    white 75%,
+    transparent 75%,
+    transparent 100%
+  );
+  background-repeat:no-repeat;
+  background-position-x: 50px;
+  background-size: 120px 120px;
+  height: 50%;
+  width: 100%;
+  top: 0;
+  position: absolute;
+}
+
+.seg-stripes-bottom {
+  background: linear-gradient(
+    -45deg,
+    transparent 0%,
+    transparent 66.66%,
+    white 66.66%,
+    white 75%,
+    transparent 75%,
+    transparent 83.33%,
+    white 83.33%,
+    white 91.66%,
+    transparent 91.66%,
+    transparent 100%
+  );
+  background-repeat:no-repeat;
+  background-position-x: 40px;
+  background-size: 120px 120px;
+  height: 50%;
+  width: 100%;
+  bottom: 0;
+  position: absolute;
+}

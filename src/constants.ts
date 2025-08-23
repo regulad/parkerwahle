@@ -49,8 +49,6 @@ export const socials = [
   }
 ] satisfies Social[];
 
-// sample bio: Experienced software developer with a passion for building innovative solutions. Skilled in a variety of programming languages and technologies.
-// should be direct and action verb-y but still showcase a little of my personality and writing style
-export const bio = "" +
-  "Experienced software engineer, eloquently spoken people person, and lifelong learner (a hungry learner at that). " +
-  "Currently a computer science tutor, freelance developer, and student."
+export const bio = "NC State 2029 Electrical Engineering & Computer Engineering student. " + 
+  "Amateur software engineer, amateur photographer, and lifelong learner. " +
+  "Freelance developer, camera operator, and student."

@@ -25,7 +25,8 @@ export default function ParticleBackground() {
 
   return (
     init && (
-      <div className={clsx("absolute -z-10 w-[100vw] h-[100%]", styles.fadeIn)}>
+      // negative z value here breaks rendering of the mt_grid effect
+      <div className={clsx("absolute z-0 w-[100vw] h-[100%]", styles.fadeIn)}>
         <Particles
           id="tsparticles"
           particlesLoaded={onParticlesLoaded}

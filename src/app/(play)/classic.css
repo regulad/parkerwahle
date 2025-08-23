@@ -1,0 +1,273 @@
+/*
+ * IE9 Default Browser Styles Recreation
+ * Created by Claude (Anthropic) 
+ * Recreates the classic unstyled HTML look from IE9/early 2000s web era
+ * Designed to work over Tailwind CSS reset
+ * Use class "immune" to exclude elements from IE9 styling
+ * Only applies when html or another element has id htmlSurrogate and body has id bodySurrogate, this enables ot to work over an existing reset style
+ */
+
+/* Import classic fonts that old browsers used; PW note: this font is not available through next fonts */
+@import url('https://fonts.googleapis.com/css2?family=Times+New+Roman:wght@400;700&display=swap');
+
+/* Basic document styling - only when html has "classic" class */
+#htmlSurrogate:not(.immune):not(.immune *) {
+    font-family: "Times New Roman", Times, serif !important;
+    font-size: 16px !important;
+    line-height: 1.2 !important;   
+}
+
+#htmlSurrogate #bodySurrogate:not(.immune):not(.immune *) {
+    font-family: "Times New Roman", Times, serif !important;
+    font-size: 16px !important;
+    line-height: 1.2 !important;
+    color: black !important;
+    background-color: white !important;
+    margin: 8px !important;
+}
+
+/* Headings - only when html has "classic" class */
+#htmlSurrogate h1:not(.immune):not(.immune *) {
+    font-size: 2em !important;
+    font-weight: bold !important;
+    margin: 0.67em 0 !important;
+    font-family: "Times New Roman", Times, serif !important;
+}
+
+#htmlSurrogate h2:not(.immune):not(.immune *) {
+    font-size: 1.5em !important;
+    font-weight: bold !important;
+    margin: 0.75em 0 !important;
+    font-family: "Times New Roman", Times, serif !important;
+}
+
+#htmlSurrogate h3:not(.immune):not(.immune *) {
+    font-size: 1.17em !important;
+    font-weight: bold !important;
+    margin: 0.83em 0 !important;
+    font-family: "Times New Roman", Times, serif !important;
+}
+
+#htmlSurrogate h4:not(.immune):not(.immune *) {
+    font-size: 1em !important;
+    font-weight: bold !important;
+    margin: 1.12em 0 !important;
+    font-family: "Times New Roman", Times, serif !important;
+}
+
+#htmlSurrogate h5:not(.immune):not(.immune *) {
+    font-size: 0.83em !important;
+    font-weight: bold !important;
+    margin: 1.5em 0 !important;
+    font-family: "Times New Roman", Times, serif !important;
+}
+
+#htmlSurrogate h6:not(.immune):not(.immune *) {
+    font-size: 0.75em !important;
+    font-weight: bold !important;
+    margin: 1.67em 0 !important;
+    font-family: "Times New Roman", Times, serif !important;
+}
+
+/* Paragraphs and text - only when html has "classic" class */
+#htmlSurrogate p:not(.immune):not(.immune *) {
+    margin: 1em 0 !important;
+    font-family: "Times New Roman", Times, serif !important;
+    font-size: inherit !important;
+    line-height: 1.2 !important;
+}
+
+/* Apply IE9 font to text elements - only when html has "classic" class */
+#htmlSurrogate div:not(.immune):not(.immune *),
+#htmlSurrogate span:not(.immune):not(.immune *),
+#htmlSurrogate text:not(.immune):not(.immune *) {
+    font-family: "Times New Roman", Times, serif;
+}
+
+/* Classic web links - only when html has "classic" class */
+#htmlSurrogate a:link {
+    color: #0000EE !important;
+    text-decoration: underline !important;
+}
+
+#htmlSurrogate a:visited {
+    color: #551A8B !important;
+    text-decoration: underline !important;
+}
+
+#htmlSurrogate a:hover {
+    color: #0000EE !important;
+    text-decoration: underline !important;
+}
+
+#htmlSurrogate a:active {
+    color: #EE0000 !important;
+    text-decoration: underline !important;
+}
+
+/* Lists with classic styling - only when html has "classic" class */
+#htmlSurrogate ul:not(.immune):not(.immune *), 
+#htmlSurrogate ol:not(.immune):not(.immune *) {
+    margin: 1em 0 !important;
+    padding-left: 40px !important;
+    font-family: "Times New Roman", Times, serif !important;
+}
+
+#htmlSurrogate ul {
+    list-style-type: disc !important;
+}
+
+#htmlSurrogate ol {
+    list-style-type: decimal !important;
+}
+
+#htmlSurrogate li:not(.immune):not(.immune *) {
+    margin: 0 !important;
+    padding: 0 !important;
+    font-family: "Times New Roman", Times, serif;
+}
+
+/* Tables with classic spacing - only when html has "classic" class */
+#htmlSurrogate table:not(.immune):not(.immune *) {
+    border-spacing: 2px !important;
+    border-collapse: separate !important;
+    font-family: "Times New Roman", Times, serif !important;
+    font-size: inherit !important;
+}
+
+#htmlSurrogate th:not(.immune):not(.immune *), 
+#htmlSurrogate td:not(.immune):not(.immune *) {
+    padding: 1px !important;
+    text-align: left !important;
+    vertical-align: top !important;
+    font-family: "Times New Roman", Times, serif !important;
+}
+
+#htmlSurrogate th {
+    font-weight: bold !important;
+}
+
+/* Classic form styling - only when html has "classic" class */
+#htmlSurrogate form {
+    margin: 0 !important;
+}
+
+/* Form inputs - only when html has "classic" class */
+#htmlSurrogate input:not(.immune):not(.immune *), 
+#htmlSurrogate button:not(.immune):not(.immune *), 
+#htmlSurrogate select:not(.immune):not(.immune *), 
+#htmlSurrogate textarea:not(.immune):not(.immune *) {
+    font-family: "Times New Roman", Times, serif !important;
+    font-size: inherit !important;
+}
+
+#htmlSurrogate input[type="text"], 
+#htmlSurrogate input[type="password"], 
+#htmlSurrogate input[type="email"], 
+#htmlSurrogate textarea {
+    border: 2px inset #eeeeee !important;
+    padding: 1px !important;
+    background-color: white !important;
+    border-radius: 0 !important;
+}
+
+#htmlSurrogate input[type="submit"], 
+#htmlSurrogate input[type="button"], 
+#htmlSurrogate button {
+    border: 2px outset #eeeeee !important;
+    padding: 2px 6px !important;
+    background-color: #eeeeee !important;
+    cursor: pointer !important;
+    border-radius: 0 !important;
+}
+
+#htmlSurrogate input[type="submit"]:active, 
+#htmlSurrogate input[type="button"]:active, 
+#htmlSurrogate button:active {
+    border: 2px inset #eeeeee !important;
+}
+
+#htmlSurrogate select {
+    border: 2px inset #eeeeee !important;
+    background-color: white !important;
+    border-radius: 0 !important;
+}
+
+/* Text formatting - only when html has "classic" class */
+#htmlSurrogate em, 
+#htmlSurrogate i {
+    font-style: italic !important;
+}
+
+#htmlSurrogate strong, 
+#htmlSurrogate b {
+    font-weight: bold !important;
+}
+
+#htmlSurrogate u {
+    text-decoration: underline !important;
+}
+
+/* Horizontal rule - only when html has "classic" class */
+#htmlSurrogate hr {
+    border: 1px inset #eeeeee !important;
+    margin: 0.5em auto !important;
+    height: 2px !important;
+}
+
+/* Blockquote - only when html has "classic" class */
+#htmlSurrogate blockquote:not(.immune):not(.immune *) {
+    margin: 1em 40px !important;
+    font-family: "Times New Roman", Times, serif !important;
+}
+
+/* Preformatted text - use classic monospace - only when html has "classic" class */
+#htmlSurrogate pre, 
+#htmlSurrogate code {
+    font-family: "Courier New", Courier, monospace !important;
+}
+
+#htmlSurrogate pre {
+    white-space: pre !important;
+    margin: 1em 0 !important;
+}
+
+/* Images - only when html has "classic" class */
+#htmlSurrogate img {
+    border: 0 !important;
+    vertical-align: top !important;
+}
+
+/* Definition lists - only when html has "classic" class */
+#htmlSurrogate dl:not(.immune):not(.immune *) {
+    margin: 1em 0 !important;
+    font-family: "Times New Roman", Times, serif !important;
+}
+
+#htmlSurrogate dt:not(.immune):not(.immune *) {
+    font-weight: bold !important;
+    font-family: "Times New Roman", Times, serif;
+}
+
+#htmlSurrogate dd:not(.immune):not(.immune *) {
+    margin-left: 40px !important;
+    font-family: "Times New Roman", Times, serif;
+}
+
+/* Ensure block elements display properly - only when html has "classic" class */
+#htmlSurrogate section:not(.immune):not(.immune *), 
+#htmlSurrogate article:not(.immune):not(.immune *), 
+#htmlSurrogate aside:not(.immune):not(.immune *), 
+#htmlSurrogate nav:not(.immune):not(.immune *), 
+#htmlSurrogate main:not(.immune):not(.immune *), 
+#htmlSurrogate header:not(.immune):not(.immune *), 
+#htmlSurrogate footer:not(.immune):not(.immune *) {
+    display: block !important;
+    font-family: "Times New Roman", Times, serif;
+}
+
+/* Small text - only when html has "classic" class */
+#htmlSurrogate small:not(.immune):not(.immune *) {
+    font-size: 0.83em !important;
+    font-family: "Times New Roman", Times, serif;
+}

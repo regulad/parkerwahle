@@ -1,5 +1,5 @@
-import {socials} from "@/app/constants";
-import {Button} from "@/components/ui/button";
+import { socials } from "@/constants";
+import { Button } from "@/components/ui/button";
 import React from "react";
 
 export const metadata = {
@@ -19,7 +19,7 @@ export default function Contact() {
           {[...socials].map((social) => (
             <a href={social.url} key={social.name} title={social.name}>
               <Button variant="outline" size="icon">
-                {React.createElement(social.iconComponent, {className: "w-6 h-6"})}
+                {React.createElement(social.iconComponent, { className: "w-6 h-6" })}
                 <span className="sr-only">{social.name}</span>
               </Button>
             </a>

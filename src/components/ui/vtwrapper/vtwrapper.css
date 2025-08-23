@@ -1,0 +1,25 @@
+/* dummy transition */
+::view-transition-group(.dummy),
+::view-transition-image-pair(.dummy),
+::view-transition-old(.dummy),
+::view-transition-new(.dummy) {
+  animation-name: none;
+  display: none
+}
+
+/* overlay effect */
+#effectOverlay { 
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: transparent;
+
+  pointer-events: none;
+  z-index: 40;
+}
+
+.mmGridSubcanvasWrapper {
+  position: fixed;
+}
