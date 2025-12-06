@@ -19,6 +19,11 @@ export default function Layout({children}: Readonly<{ children: React.ReactNode;
                                 </span>
                                 &#8203;
                                 <span className="ml-2">
+                                    <a href="https://github.com/regulad">
+                                        Portfolio
+                                    </a>
+                                </span>
+                                <span className="ml-2">
                                     <Link href="/gallery">
                                         Gallery
                                     </Link>

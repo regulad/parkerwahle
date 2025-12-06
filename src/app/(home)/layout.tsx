@@ -17,7 +17,7 @@ export default function Layout({children}: Readonly<{ children: React.ReactNode;
               {/* Doesn't really matter on mobile */}
               <div className="hidden md:flex items-center space-x-4">
                 <a href="https://github.com/regulad" className="text-muted-foreground hover:text-foreground">
-                  GitHub Portfolio&nbsp;<FiExternalLink className="inline w-4 h-4"/>
+                  Portfolio&nbsp;<FiExternalLink className="inline w-4 h-4"/>
                 </a>
                 <Link href="/contact" className="text-muted-foreground hover:text-foreground">
                   Contact

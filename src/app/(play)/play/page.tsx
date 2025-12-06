@@ -10,7 +10,7 @@ export default function Play() {
                 If you&apos;re as curious as I am about the way things work, you&apos;ll be amazed that the transition to this page was not nearly as <span title="Wanna see CSS & JS pushed to it's limits? Zoom all the way out and try the transition! You can also resize it during the transition." className="tooltip-span">performance intensive</span> as I thought it would be before I made it.
             </p>
             <p>
-                The transition is my best attempt at emulating the Play &harr; Make animation from the editor of <span title="LEGAL DISCLAIMER: Nintendo had nothing to do with this website. Thank goodness!" className="tooltip-span"><i>Super Mario Maker</i> for the Nintendo Wii U.</span>
+                The transition is my best attempt at emulating the switching themes animation from the editor of <span title="LEGAL DISCLAIMER: Nintendo had nothing to do with this website. Thank goodness!" className="tooltip-span"><i>Super Mario Maker</i> for the Nintendo Wii U.</span>
             </p>
             <p>
                 As a kid, <i>Super Mario Maker</i>, along with a menagerie of YouTube channels including <a href="https://www.youtube.com/@williamosman">William Osman</a> and <a href="https://www.youtube.com/@carykh">carykh</a>, helped me realize that I felt a pull to the core engineering loop of &quot;trying,&quot; &quot;failing,&quot; and &quot;trying it again.&quot;
