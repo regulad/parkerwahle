@@ -42,6 +42,12 @@ export default function Layout({children}: Readonly<{ children: React.ReactNode;
                             <p>
                                 Source code used to produce visual effects/construct web pages may be available on <a href="https://github.com/regulad">my GitHub</a> under a GPL license or similar copyleft license.
                             </p>
+                            <p>
+                                If you would like to reach out to me, please write me an email. My address is <code>regulad (at) regulad (dot) xyz</code>.
+                            </p>
+                            <p>
+                                Alternatively, if you have an issue with the website (i.e. DMCA request) or have a comment and/or concern, please contact me at my alternative email <code>webmaster (at) regulad (dot) xyz</code>.
+                            </p>
                         </div>
                     </div>
                 </main>

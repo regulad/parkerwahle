@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 export default function Play() {
     return (
         <>
@@ -32,7 +34,7 @@ export default function Play() {
                 So, finally, welcome to my website. This website exists to exist. Lucky  me, I get to express myself through the information super-highway! A real, old-school website! Of course, I much prefer the esoteric <i>webzone</i> instead of website, but you&apos;re welcome to call it whatever you choose.
             </p>
             <p>
-                Check out my gallery and periodical blog, linked in the nav bar above.
+                Check out my <Link href="/gallery">gallery</Link> and <Link href="/blog">periodical blog</Link>!
             </p>
         </>
     )
