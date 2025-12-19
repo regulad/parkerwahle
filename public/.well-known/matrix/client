@@ -4,5 +4,11 @@
   },
   "m.identity_server": {
     "base_url": "https://matrix.org"
-  }
+  },
+  "org.matrix.msc4143.rtc_foci": [
+    {
+      "type": "livekit",
+      "livekit_service_url": "https://livekit.regulad.xyz/livekit/jwt"
+    }
+  ]
 }
