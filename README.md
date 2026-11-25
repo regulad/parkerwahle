@@ -39,3 +39,8 @@ the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=
 from the creators of Next.js.
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+
+## Licence
+
+Free software, under the GNU Affero General Public License, version 3 or (at your option) any later version
+([`LICENSE.md`](LICENSE.md)).
