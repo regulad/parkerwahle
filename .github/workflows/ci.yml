@@ -1,0 +1,35 @@
+name: CI
+
+# The checks a pull request must pass besides Vercel's preview build (.github/settings.yml's required checks): ESLint
+# and the TypeScript type-check. Vercel's build compiles the site, and on Next.js 15 also lints; from Next.js 16,
+# next build no longer lints, so this workflow is what keeps the lint, whichever version the site is on.
+on:
+  pull_request:
+    branches: ["master"]
+  push:
+    branches: ["master"]
+
+permissions:
+  contents: read
+
+jobs:
+  check:
+    name: Lint and type-check
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      # pnpm 10 reads the lockfile's format, 9.0. package.json names no packageManager, so the version is pinned here.
+      - uses: pnpm/action-setup@73e46992e05b19abd31f2f3c20e0e7370d762115 # v6.1.1
+        with:
+          version: 10.34.9
+      # Node 24, as Vercel builds the site with (regulad/homelab's tofu/vercel).
+      - uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
+        with:
+          node-version: 24
+          cache: pnpm
+      - run: pnpm install --frozen-lockfile
+      - run: pnpm run lint
+      - run: pnpm run type-check
