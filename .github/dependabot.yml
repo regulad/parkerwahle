@@ -1,0 +1,49 @@
+# Dependabot keeps every pinned version current: the site's npm packages, in pnpm-lock.yaml, and GitHub Actions.
+#
+# Each ecosystem gets one PR a week grouping its minor and patch updates. workflows/dependabot-auto-merge.yml has GitHub
+# merge the npm group, and security updates, once Vercel's preview build passes, and a merge to master deploys. These
+# wait for a person:
+# - the actions group, since workflow changes get a review;
+# - major updates, which come as PRs of their own.
+#
+# The cooldown holds each release back until it is two weeks old, so nothing ships while it's days old. Security updates
+# skip it.
+version: 2
+
+updates:
+  - package-ecosystem: "npm"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+      day: "monday"
+      time: "05:00"
+      timezone: "America/New_York"
+    cooldown:
+      default-days: 14
+    ignore:
+      # tailwind-merge 3 supports Tailwind CSS 4 only, and the site is on Tailwind 3: the two move together, by hand.
+      - dependency-name: "tailwind-merge"
+        update-types: ["version-update:semver-major"]
+      # @types/node describes the Node the site runs on, Vercel's 24.x (regulad/homelab's tofu/vercel); a newer major
+      # would type APIs it lacks. Raise this with the runtime.
+      - dependency-name: "@types/node"
+        versions: [">= 25"]
+      # Tailwind CSS 4 needs tailwind.config.ts rewritten, along with tailwind-merge 3.
+      - dependency-name: "tailwindcss"
+        update-types: ["version-update:semver-major"]
+    groups:
+      npm:
+        update-types: ["minor", "patch"]
+
+  - package-ecosystem: "github-actions"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+      day: "monday"
+      time: "05:00"
+      timezone: "America/New_York"
+    cooldown:
+      default-days: 14
+    groups:
+      actions:
+        update-types: ["minor", "patch"]
