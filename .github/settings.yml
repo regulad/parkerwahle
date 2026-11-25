@@ -9,7 +9,7 @@ repository:
     Source of Parker Wahle's personal homepage at regulad.xyz, built with
     Next.js and Tailwind CSS
   homepage: "https://regulad.xyz"
-  private: true
+  private: false
   # Topics: comma-and-space separated string, NOT a YAML list.
   topics: personal-website, nextjs, react, typescript, tailwindcss, shadcn-ui
   default_branch: master
