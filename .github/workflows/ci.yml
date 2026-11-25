@@ -31,5 +31,13 @@ jobs:
           node-version: 24
           cache: pnpm
       - run: pnpm install --frozen-lockfile
-      - run: pnpm run lint
-      - run: pnpm run type-check
+      # ESLint's and tsc's own caches, so each run checks only what changed. The key moves with every commit, so each
+      # run saves its state, and restores the newest state saved with the same lockfile and configs.
+      - uses: actions/cache@55cc8345863c7cc4c66a329aec7e433d2d1c52a9 # v6.1.0
+        with:
+          path: .cache
+          key: check-${{ runner.os }}-${{ hashFiles('pnpm-lock.yaml', '.eslintrc.json', 'tsconfig.json') }}-${{ github.sha }}
+          restore-keys: check-${{ runner.os }}-${{ hashFiles('pnpm-lock.yaml', '.eslintrc.json', 'tsconfig.json') }}-
+      # next lint caches by default. A fresh checkout gives every file a new mtime, so the cache compares contents.
+      - run: pnpm run lint --cache-location .cache/eslint/ --cache-strategy content
+      - run: pnpm run type-check --incremental --tsBuildInfoFile .cache/tsc/tsbuildinfo
