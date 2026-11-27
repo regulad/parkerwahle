@@ -1,8 +1,7 @@
-// @ts-check
+import type { NextConfig } from "next";
 import { withSentryConfig } from "@sentry/nextjs/config";
 
-/** @type {import('next').NextConfig} */
-const nextConfig = {
+const nextConfig: NextConfig = {
   // Off, so next dev doesn't write an AGENTS.md when it detects a coding
   // agent: agent instructions stay out of this repository.
   agentRules: false,
