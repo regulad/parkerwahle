@@ -1,0 +1,5 @@
+{
+    // ESLint's config is .config/eslint.config.ts (AGENTS.md, Config files), which the ESLint extension doesn't find
+    // by itself. The lint script passes the same path with --config.
+    "eslint.options": { "overrideConfigFile": ".config/eslint.config.ts" }
+}

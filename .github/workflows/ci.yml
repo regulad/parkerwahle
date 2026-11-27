@@ -34,8 +34,8 @@ jobs:
       - uses: actions/cache@55cc8345863c7cc4c66a329aec7e433d2d1c52a9 # v6.1.0
         with:
           path: .cache
-          key: check-${{ runner.os }}-${{ hashFiles('pnpm-lock.yaml', 'eslint.config.ts', 'tsconfig.json') }}-${{ github.sha }}
-          restore-keys: check-${{ runner.os }}-${{ hashFiles('pnpm-lock.yaml', 'eslint.config.ts', 'tsconfig.json') }}-
+          key: check-${{ runner.os }}-${{ hashFiles('pnpm-lock.yaml', '.config/eslint.config.ts', 'tsconfig.json') }}-${{ github.sha }}
+          restore-keys: check-${{ runner.os }}-${{ hashFiles('pnpm-lock.yaml', '.config/eslint.config.ts', 'tsconfig.json') }}-
       # A fresh checkout gives every file a new mtime, so the cache compares contents.
       - run: pnpm run lint --cache --cache-location .cache/eslint/ --cache-strategy content
       - run: pnpm run type-check --incremental --tsBuildInfoFile .cache/tsc/tsbuildinfo
