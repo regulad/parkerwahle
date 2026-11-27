@@ -7,7 +7,7 @@ import { VTClapboardWrapper } from "@/components/ui/vtwrapper/vtwrapper";
 export default function Layout({children}: Readonly<{ children: React.ReactNode; }>) {
   return (
     <>
-      <VTClapboardWrapper text="Play" destination="/play"> 
+      <VTClapboardWrapper text="Play" destination="/play">
         <main lang="en" className="mb-32">
           <header className="flex items-center justify-between h-16 px-4 md:px-6 border-b">
             <nav className="flex items-center space-x-6">

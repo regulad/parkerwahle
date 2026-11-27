@@ -1,6 +1,6 @@
 /*
  * IE9 Default Browser Styles Recreation
- * Created by Claude (Anthropic) 
+ * Created by Claude (Anthropic)
  * Recreates the classic unstyled HTML look from IE9/early 2000s web era
  * Designed to work over Tailwind CSS reset
  * Use class "immune" to exclude elements from IE9 styling
@@ -14,7 +14,7 @@
 #htmlSurrogate:not(.immune):not(.immune *) {
     font-family: "Times New Roman", Times, serif !important;
     font-size: 16px !important;
-    line-height: 1.2 !important;   
+    line-height: 1.2 !important;
 }
 
 #htmlSurrogate #bodySurrogate:not(.immune):not(.immune *) {
@@ -106,7 +106,7 @@
 }
 
 /* Lists with classic styling - only when html has "classic" class */
-#htmlSurrogate ul:not(.immune):not(.immune *), 
+#htmlSurrogate ul:not(.immune):not(.immune *),
 #htmlSurrogate ol:not(.immune):not(.immune *) {
     margin: 1em 0 !important;
     padding-left: 40px !important;
@@ -135,7 +135,7 @@
     font-size: inherit !important;
 }
 
-#htmlSurrogate th:not(.immune):not(.immune *), 
+#htmlSurrogate th:not(.immune):not(.immune *),
 #htmlSurrogate td:not(.immune):not(.immune *) {
     padding: 1px !important;
     text-align: left !important;
@@ -153,17 +153,17 @@
 }
 
 /* Form inputs - only when html has "classic" class */
-#htmlSurrogate input:not(.immune):not(.immune *), 
-#htmlSurrogate button:not(.immune):not(.immune *), 
-#htmlSurrogate select:not(.immune):not(.immune *), 
+#htmlSurrogate input:not(.immune):not(.immune *),
+#htmlSurrogate button:not(.immune):not(.immune *),
+#htmlSurrogate select:not(.immune):not(.immune *),
 #htmlSurrogate textarea:not(.immune):not(.immune *) {
     font-family: "Times New Roman", Times, serif !important;
     font-size: inherit !important;
 }
 
-#htmlSurrogate input[type="text"], 
-#htmlSurrogate input[type="password"], 
-#htmlSurrogate input[type="email"], 
+#htmlSurrogate input[type="text"],
+#htmlSurrogate input[type="password"],
+#htmlSurrogate input[type="email"],
 #htmlSurrogate textarea {
     border: 2px inset #eeeeee !important;
     padding: 1px !important;
@@ -171,8 +171,8 @@
     border-radius: 0 !important;
 }
 
-#htmlSurrogate input[type="submit"], 
-#htmlSurrogate input[type="button"], 
+#htmlSurrogate input[type="submit"],
+#htmlSurrogate input[type="button"],
 #htmlSurrogate button {
     border: 2px outset #eeeeee !important;
     padding: 2px 6px !important;
@@ -181,8 +181,8 @@
     border-radius: 0 !important;
 }
 
-#htmlSurrogate input[type="submit"]:active, 
-#htmlSurrogate input[type="button"]:active, 
+#htmlSurrogate input[type="submit"]:active,
+#htmlSurrogate input[type="button"]:active,
 #htmlSurrogate button:active {
     border: 2px inset #eeeeee !important;
 }
@@ -194,12 +194,12 @@
 }
 
 /* Text formatting - only when html has "classic" class */
-#htmlSurrogate em, 
+#htmlSurrogate em,
 #htmlSurrogate i {
     font-style: italic !important;
 }
 
-#htmlSurrogate strong, 
+#htmlSurrogate strong,
 #htmlSurrogate b {
     font-weight: bold !important;
 }
@@ -222,7 +222,7 @@
 }
 
 /* Preformatted text - use classic monospace - only when html has "classic" class */
-#htmlSurrogate pre, 
+#htmlSurrogate pre,
 #htmlSurrogate code {
     font-family: "Courier New", Courier, monospace !important;
 }
@@ -255,12 +255,12 @@
 }
 
 /* Ensure block elements display properly - only when html has "classic" class */
-#htmlSurrogate section:not(.immune):not(.immune *), 
-#htmlSurrogate article:not(.immune):not(.immune *), 
-#htmlSurrogate aside:not(.immune):not(.immune *), 
-#htmlSurrogate nav:not(.immune):not(.immune *), 
-#htmlSurrogate main:not(.immune):not(.immune *), 
-#htmlSurrogate header:not(.immune):not(.immune *), 
+#htmlSurrogate section:not(.immune):not(.immune *),
+#htmlSurrogate article:not(.immune):not(.immune *),
+#htmlSurrogate aside:not(.immune):not(.immune *),
+#htmlSurrogate nav:not(.immune):not(.immune *),
+#htmlSurrogate main:not(.immune):not(.immune *),
+#htmlSurrogate header:not(.immune):not(.immune *),
 #htmlSurrogate footer:not(.immune):not(.immune *) {
     display: block !important;
     font-family: "Times New Roman", Times, serif;

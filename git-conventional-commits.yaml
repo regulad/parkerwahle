@@ -1,0 +1,23 @@
+# Config for the conventional-commits commit-msg hook
+# (qoomon/git-conventional-commits, in .pre-commit-config.yaml), which won't
+# run without this file and reads it only from the root. The commit types are
+# the tool's defaults, copied from its git-conventional-commits.default.yaml at
+# v2.9.0, and ci, which this repository's history uses for its workflows. A
+# `convention` block must list both `commitTypes` and `commitScopes`. Scopes are
+# free-form.
+convention:
+  commitTypes:
+    - feat
+    - fix
+    - refactor
+    - perf
+    - style
+    - test
+    - build
+    - ops
+    - docs
+    - chore
+    - merge
+    - revert
+    - ci
+  commitScopes: []

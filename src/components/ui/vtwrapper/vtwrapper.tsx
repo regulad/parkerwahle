@@ -12,10 +12,10 @@ function cloneCanvas(originalCanvas: HTMLCanvasElement): HTMLCanvasElement {
     // Create a new canvas element
     const clonedCanvas = originalCanvas.cloneNode() as HTMLCanvasElement;
     const clonedCtx = clonedCanvas.getContext('2d')!!;
-    
+
     // Draw the original canvas onto the new one
     clonedCtx.drawImage(originalCanvas, 0, 0);
-    
+
     return clonedCanvas;
 }
 
@@ -123,13 +123,13 @@ export function VTClapboardWrapper({ children, destination, text, classic = fals
                 const animationOffsetInt = parseInt(animationOffsetString)
 
                 return element.animate([
-                    { 
+                    {
                         outline: '0px solid transparent',
-                        opacity: 100 
+                        opacity: 100
                     },
-                    { 
+                    {
                         outline: '3px solid #6666',
-                        opacity: 50 
+                        opacity: 50
                     }
                 ], {
                     duration: 200,
@@ -137,11 +137,11 @@ export function VTClapboardWrapper({ children, destination, text, classic = fals
                     easing: 'ease-out',
                     fill: 'forwards'
                 }).finished.then(() => element.animate([
-                    { 
-                        transform: 'perspective(1000px) rotate3d(-1, 1, 0, 0deg)' 
+                    {
+                        transform: 'perspective(1000px) rotate3d(-1, 1, 0, 0deg)'
                     },
-                    { 
-                        transform: 'perspective(1000px) rotate3d(-1, 1, 0, 90deg)' 
+                    {
+                        transform: 'perspective(1000px) rotate3d(-1, 1, 0, 90deg)'
                     }
                 ], {
                     duration: 400,
@@ -151,7 +151,7 @@ export function VTClapboardWrapper({ children, destination, text, classic = fals
                 }).finished)
             }));
 
-            
+
             // reset overlay, animation is complete
             overlay.innerHTML = "";
         }
@@ -160,7 +160,7 @@ export function VTClapboardWrapper({ children, destination, text, classic = fals
     // changing the page is an "update" transition
     // the imperative onUpdate only gets called if the update actually has an animation to call
 
-    // we need to create a domimage before we push to the router to start a transition 
+    // we need to create a domimage before we push to the router to start a transition
 
     const ref: MutableRefObject<HTMLDivElement | null> = useRef(null)
 

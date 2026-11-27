@@ -1,9 +1,11 @@
-# Dependabot keeps every pinned version current: the site's npm packages, in pnpm-lock.yaml, and GitHub Actions.
+# Dependabot keeps every pinned version current: the site's npm packages, in pnpm-lock.yaml, GitHub Actions, and the
+# pre-commit hooks' revisions (.pre-commit-config.yaml).
 #
 # Each ecosystem gets one PR a week grouping its minor and patch updates. workflows/dependabot-auto-merge.yml has GitHub
 # merge the npm group, and security updates, once Vercel's preview build and CI pass, and a merge to master deploys.
 # These wait for a person:
 # - the actions group, since workflow changes get a review;
+# - the pre-commit group, whose hooks no check runs;
 # - major updates, which come as PRs of their own.
 #
 # The cooldown holds each release back until it is two weeks old, so nothing ships while it's days old. Security updates
@@ -44,4 +46,22 @@ updates:
       default-days: 14
     groups:
       actions:
+        update-types: ["minor", "patch"]
+
+  # Each rev is a full commit SHA with its release in a `# frozen:` comment; Dependabot reads the comment to pick the
+  # next release and rewrites both.
+  - package-ecosystem: "pre-commit"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+      day: "monday"
+      time: "05:00"
+      timezone: "America/New_York"
+    cooldown:
+      default-days: 14
+    # The label regulad/.github's shared settings define, as regulad/skills uses: .github/settings.yml lists no label
+    # for this ecosystem, and the Settings app deletes labels neither file lists.
+    labels: ["dependencies"]
+    groups:
+      pre-commit:
         update-types: ["minor", "patch"]

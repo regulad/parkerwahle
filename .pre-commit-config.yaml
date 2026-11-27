@@ -1,0 +1,59 @@
+# pre-commit (https://pre-commit.com) hooks. The git template installs them in
+# every new clone; `pre-commit install` does it by hand, and
+# `pre-commit run --all-files` runs them on the whole tree. Each rev is a full
+# commit SHA with its release in a `# frozen:` comment, as
+# `pre-commit autoupdate --freeze` writes them; Dependabot updates them.
+default_install_hook_types: [pre-commit, commit-msg]
+# File hooks run on commits only. Without this they would also run at every
+# other installed stage, commit-msg included, against the message file.
+default_stages: [pre-commit]
+# The licence text stays exactly as published.
+exclude: '^LICENSE\.md$'
+repos:
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: 3e8a8703264a2f4a69428a0aa4dcb512790b2c8c  # frozen: v6.0.0
+    hooks:
+      - id: trailing-whitespace
+        args: [--markdown-linebreak-ext=md]
+      - id: end-of-file-fixer
+      - id: mixed-line-ending
+        args: [--fix=lf]
+      # pnpm-lock.yaml opens with pnpm's own record as a document of its own.
+      - id: check-yaml
+        args: [--allow-multiple-documents]
+      - id: check-toml
+      # Strict JSON only: tsconfig.json and the VS Code settings are JSONC,
+      # which may hold comments.
+      - id: check-json
+        exclude: '^(tsconfig\.json|\.vscode/settings\.json)$'
+      - id: check-merge-conflict
+      - id: check-added-large-files
+  - repo: https://github.com/qoomon/git-conventional-commits
+    rev: f00599350f1d22c14f431b4e458f1076124c0c0d  # frozen: v2.9.0
+    hooks:
+      - id: conventional-commits
+  - repo: local
+    hooks:
+      # A TODO or FIXME names its GitHub issue, as TODO(#123). Markdown and this
+      # file use the words without being sentinels.
+      - id: todo-needs-issue
+        name: TODO and FIXME name an issue, as TODO(#N)
+        language: pygrep
+        # Code only: never the commit message, which may name the words.
+        stages: [pre-commit]
+        entry: '\b(TODO|FIXME)\b(?!\(#\d+\))'
+        exclude_types: [markdown]
+        exclude: '^\.pre-commit-config\.yaml$'
+      # The project's own checks, the commands CI runs (.github/workflows/ci.yml).
+      - id: eslint
+        name: ESLint
+        language: system
+        entry: pnpm run lint
+        pass_filenames: false
+        types_or: [ts, tsx, javascript, jsx]
+      - id: tsc
+        name: TypeScript type-check
+        language: system
+        entry: pnpm run type-check
+        pass_filenames: false
+        types_or: [ts, tsx]

@@ -20,8 +20,9 @@ there's nothing for a version to name.
   `.postcssrc.json`, `postcss.config.json` and `postcss.config.{js,mjs,cjs}` (`next/dist/lib/find-config.js`), and
   `next dev` (Turbopack) reads `postcss.config.{js,mjs,cjs,ts,mts,cts}`, so `.js`, `.mjs` and `.cjs` are the only
   formats both see. Neither looks for it outside the root.
-- `next.config.ts`, `tsconfig.json`, `components.json` and pnpm's files stay at the root too: Next.js, editors, the
-  shadcn CLI and pnpm look for them only there.
+- `next.config.ts`, `tsconfig.json`, `components.json`, pnpm's files, `.pre-commit-config.yaml` and
+  `git-conventional-commits.yaml` stay at the root too: Next.js, editors, the shadcn CLI, pnpm, pre-commit and
+  git-conventional-commits look for them only there.
 
 ## Sentry's files
 
@@ -35,3 +36,9 @@ there's nothing for a version to name.
   `src/instrumentation-client.ts` import them.
 - `src/instrumentation.ts` and `src/instrumentation-client.ts` stay in `src/`, next to `src/app/`: Next.js production
   builds don't pick up instrumentation from other folders.
+
+## Commits
+
+- Conventional commits, `<type>(<scope>): <summary>`, which the conventional-commits hook checks. The types are
+  git-conventional-commits' defaults and `ci`, for workflow changes (`git-conventional-commits.yaml`). Scopes are
+  free-form, such as `deps`, `eslint`, `pnpm`, or `agents` for this file.

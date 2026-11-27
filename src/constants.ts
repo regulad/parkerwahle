@@ -49,6 +49,6 @@ export const socials = [
   }
 ] satisfies Social[];
 
-export const bio = "NC State 2029 Electrical Engineering & Computer Engineering student. " + 
+export const bio = "NC State 2029 Electrical Engineering & Computer Engineering student. " +
   "Amateur software engineer, amateur photographer, and lifelong learner. " +
   "Freelance developer, camera operator, and student."

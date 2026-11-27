@@ -10,7 +10,7 @@ export default function Layout({children}: Readonly<{ children: React.ReactNode;
             <VTClapboardWrapper text="Work" destination="/" classic>
                 <main lang="en" className="mb-32">
                     <div id="htmlSurrogate">
-                        <div id="bodySurrogate"> 
+                        <div id="bodySurrogate">
                             <nav>
                                 <span className="text-2xl">
                                     <Link href="/play">
