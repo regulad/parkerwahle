@@ -4,7 +4,7 @@ import { GoogleAnalytics } from "@next/third-parties/google"
 import "./globals.css";
 import { clsx } from "clsx";
 
-// The parkerwahle property's Google Analytics tag: NEXT_PUBLIC_GA_TAG, which regulad/homelab's
+// The landing property's Google Analytics tag: NEXT_PUBLIC_GA_TAG, which regulad/homelab's
 // tofu/vercel sets from tofu/ga4, read at build time, or the same tag by default.
 const GA_TAG = process.env.NEXT_PUBLIC_GA_TAG || "G-Y3206D9PHB";
 

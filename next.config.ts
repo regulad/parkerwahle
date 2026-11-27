@@ -12,7 +12,7 @@ export default withSentryConfig(nextConfig, {
   // https://docs.sentry.io/platforms/javascript/guides/nextjs/configuration/build/
 
   org: "regulad",
-  project: "parkerwahle",
+  project: "landing",
 
   // Uploads source maps and creates the release. regulad/homelab's tofu/vercel
   // sets it on production builds only; without it the plugin skips both with a

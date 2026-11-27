@@ -1,4 +1,4 @@
-// Where the site reports to Sentry: the project regulad/parkerwahle, which
+// Where the site reports to Sentry: the project regulad/landing, which
 // regulad/homelab's tofu/sentry makes. homelab's tofu/vercel sets
 // NEXT_PUBLIC_SENTRY_DSN on the Vercel project from tofu/sentry's output; unset,
 // the same DSN is the default. Next.js writes NEXT_PUBLIC_ values into its

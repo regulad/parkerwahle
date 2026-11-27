@@ -1,7 +1,13 @@
-# Agent notes for `regulad/parkerwahle`
+# Agent notes for `regulad/landing`
 
 This repository is the source of Parker Wahle's homepage at regulad.xyz, a Next.js site that Vercel builds and deploys
 from `master`. [README.md](README.md) covers running it.
+
+## Version
+
+`package.json`'s version stays `0.1.0` for good, rather than taking a release date as its version. Nothing ships out of
+this repository: it's the source of a web page that Vercel builds and hosts, with no releases, tags or packages, so
+there's nothing for a version to name.
 
 ## Config files
 

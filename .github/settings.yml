@@ -4,7 +4,7 @@
 _extends: .github
 
 repository:
-  name: parkerwahle
+  name: landing
   description: >-
     Source of Parker Wahle's personal homepage at regulad.xyz, built with
     Next.js and Tailwind CSS
