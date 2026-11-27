@@ -2,8 +2,8 @@ import type { NextConfig } from "next";
 import { withSentryConfig } from "@sentry/nextjs/config";
 
 const nextConfig: NextConfig = {
-  // Off, so next dev doesn't write an AGENTS.md when it detects a coding
-  // agent: agent instructions stay out of this repository.
+  // Off, so next dev doesn't add its generic agent instructions to
+  // AGENTS.md, which holds only this project's own notes.
   agentRules: false,
 };
 
