@@ -92,11 +92,11 @@ export default function ParticleBackground() {
     // renders its children once the engine has loaded
     <ParticlesProvider init={initEngine}>
       {/* negative z value here breaks rendering of the mt_grid effect */}
-      <div className={clsx("absolute z-0 w-[100vw] h-[100%]", styles.fadeIn)}>
+      <div className={clsx("absolute z-0 w-screen h-full", styles.fadeIn)}>
         <Particles
           id="tsparticles"
           options={options}
-          className={clsx("opacity-80 w-[100%] h-[140%]", styles.opacityGradient)}
+          className={clsx("opacity-80 w-full h-[140%]", styles.opacityGradient)}
         />
       </div>
     </ParticlesProvider>

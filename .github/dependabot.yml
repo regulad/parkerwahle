@@ -21,9 +21,6 @@ updates:
     cooldown:
       default-days: 14
     ignore:
-      # tailwind-merge 3 supports Tailwind CSS 4 only, and the site is on Tailwind 3: the two move together, by hand.
-      - dependency-name: "tailwind-merge"
-        update-types: ["version-update:semver-major"]
       # @types/node describes the Node the site runs on, Vercel's 26.x (regulad/homelab's tofu/vercel); a newer major
       # would type APIs it lacks. Raise this with the runtime.
       - dependency-name: "@types/node"
@@ -32,9 +29,6 @@ updates:
       # 8.74.0). Raise this with it.
       - dependency-name: "typescript"
         versions: [">= 6.1"]
-      # Tailwind CSS 4 needs tailwind.config.ts rewritten, along with tailwind-merge 3.
-      - dependency-name: "tailwindcss"
-        update-types: ["version-update:semver-major"]
     groups:
       npm:
         update-types: ["minor", "patch"]
