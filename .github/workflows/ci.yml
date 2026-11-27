@@ -21,10 +21,8 @@ jobs:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
           persist-credentials: false
-      # pnpm 10 reads the lockfile's format, 9.0. package.json names no packageManager, so the version is pinned here.
+      # Installs the pnpm that package.json's packageManager names.
       - uses: pnpm/action-setup@73e46992e05b19abd31f2f3c20e0e7370d762115 # v6.1.1
-        with:
-          version: 10.34.9
       # Node 26, as Vercel builds the site with (regulad/homelab's tofu/vercel).
       - uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
         with:

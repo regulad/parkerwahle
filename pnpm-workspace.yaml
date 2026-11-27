@@ -1,0 +1,10 @@
+# @tsparticles/engine's install script only prints a thank-you and checks for conflicting particle packages, so it
+# never needs to run.
+allowBuilds:
+  '@tsparticles/engine': false
+
+# postcss 8.5.34 is Dependabot's security update (#18), published 2026-11-27T09:25Z, which pnpm's one-day
+# minimumReleaseAge would hold until 2026-11-28T09:25Z. Only that version is exempt, and the entry has no effect after
+# then.
+minimumReleaseAgeExclude:
+  - postcss@8.5.34
