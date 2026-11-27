@@ -1,8 +1,8 @@
 name: CI
 
 # The checks a pull request must pass besides Vercel's preview build (.github/settings.yml's required checks): ESLint
-# and the TypeScript type-check. Vercel's build compiles the site, and on Next.js 15 also lints; from Next.js 16,
-# next build no longer lints, so this workflow is what keeps the lint, whichever version the site is on.
+# and the TypeScript type-check. Vercel's build compiles the site but, from Next.js 16, doesn't lint it, so this
+# workflow is what keeps the lint.
 on:
   pull_request:
     branches: ["master"]
@@ -34,8 +34,8 @@ jobs:
       - uses: actions/cache@55cc8345863c7cc4c66a329aec7e433d2d1c52a9 # v6.1.0
         with:
           path: .cache
-          key: check-${{ runner.os }}-${{ hashFiles('pnpm-lock.yaml', '.eslintrc.json', 'tsconfig.json') }}-${{ github.sha }}
-          restore-keys: check-${{ runner.os }}-${{ hashFiles('pnpm-lock.yaml', '.eslintrc.json', 'tsconfig.json') }}-
-      # next lint caches by default. A fresh checkout gives every file a new mtime, so the cache compares contents.
-      - run: pnpm run lint --cache-location .cache/eslint/ --cache-strategy content
+          key: check-${{ runner.os }}-${{ hashFiles('pnpm-lock.yaml', 'eslint.config.mjs', 'tsconfig.json') }}-${{ github.sha }}
+          restore-keys: check-${{ runner.os }}-${{ hashFiles('pnpm-lock.yaml', 'eslint.config.mjs', 'tsconfig.json') }}-
+      # A fresh checkout gives every file a new mtime, so the cache compares contents.
+      - run: pnpm run lint --cache --cache-location .cache/eslint/ --cache-strategy content
       - run: pnpm run type-check --incremental --tsBuildInfoFile .cache/tsc/tsbuildinfo

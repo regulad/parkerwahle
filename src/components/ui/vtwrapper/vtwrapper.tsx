@@ -1,17 +1,12 @@
 "use client";
 
 import "./vtwrapper.css"
-import React, { MutableRefObject, startTransition, useEffect, useRef, useState } from "react";
+import React, { MutableRefObject, ViewTransition, type ViewTransitionInstance, addTransitionType, startTransition, useEffect, useRef, useState } from "react";
 import { toBlob, toCanvas } from 'html-to-image';
-// @ts-expect-error -- react doesn't yet expose unstable APIs
-import { unstable_ViewTransition as ViewTransition, unstable_addTransitionType as addTransitionType } from 'react';
 import { Clapboard } from "../clapboard/clapboard";
 import { useRouter } from "next/navigation";
 
-// this type is not yet exported from experimental react
-// element is a "ViewTransitionInstance" in react source code 
-// https://github.com/facebook/react/blob/11d7bcf88cf13fa8fe6e091d2199c3905f5bb274/packages/shared/ReactTypes.js#L274
-type TransitionCallback = (instance: any, types: Array<string>) => void
+type TransitionCallback = (instance: ViewTransitionInstance, types: Array<string>) => void
 
 function cloneCanvas(originalCanvas: HTMLCanvasElement): HTMLCanvasElement {
     // Create a new canvas element
@@ -27,9 +22,10 @@ function cloneCanvas(originalCanvas: HTMLCanvasElement): HTMLCanvasElement {
 export function VTClapboardWrapper({ children, destination, text, classic = false }: Readonly<{ children: React.ReactNode, destination: string, text: string, classic?: boolean }>) {
     const router = useRouter();
     const [lastCanvas, setLastCanvas] = useState<HTMLCanvasElement | null>();
-    const [overlay, setOverlay] = useState<HTMLDivElement | null>();
+    // the overlay is only touched by the transition callback, never rendered, so it lives in a ref
+    const overlayRef = useRef<HTMLDivElement | null>(null);
 
-    // we place an item directly into the 
+    // we place an item directly into the
     useEffect(() => {
         const maybeOverlay = document.getElementById("effectOverlay");
         if (!maybeOverlay) {
@@ -38,13 +34,14 @@ export function VTClapboardWrapper({ children, destination, text, classic = fals
             overlayElement.id = "effectOverlay";
 
             document.body.appendChild(overlayElement);
-            setOverlay(overlayElement);
+            overlayRef.current = overlayElement;
         } else {
-            setOverlay(maybeOverlay as HTMLDivElement);
+            overlayRef.current = maybeOverlay as HTMLDivElement;
         }
     }, []);
 
     const onUpdate: TransitionCallback = async (instance, types) => {
+        const overlay = overlayRef.current;
         if (!overlay) {
             console.warn("Can't do an imperative transition without an effect overlay!")
             return;
@@ -188,7 +185,9 @@ export function VTClapboardWrapper({ children, destination, text, classic = fals
                 // default viewTransition is included, but we override for the mm_grid
                 default={classic ? "none" : undefined}
                 share={{
-                    mm_grid: "dummy"
+                    mm_grid: "dummy",
+                    // other transition types fall back to the same class as the default prop
+                    default: classic ? "none" : "auto",
                 }}
                 // imperative animations
                 onShare={onUpdate}
