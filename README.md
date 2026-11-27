@@ -40,6 +40,12 @@ from the creators of Next.js.
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
 
+## Pinned versions
+
+TypeScript is pinned to an exact version, as it doesn't follow Semantic Versioning: its minor releases can make
+breaking changes, and it declined to adopt SemVer in
+[microsoft/TypeScript#14116](https://github.com/microsoft/TypeScript/issues/14116).
+
 ## Licence
 
 Free software, under the GNU Affero General Public License, version 3 or (at your option) any later version
