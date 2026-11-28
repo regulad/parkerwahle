@@ -1,7 +1,15 @@
 # Agent notes for `regulad/landing`
 
-This repository is the source of Parker Wahle's homepage at regulad.xyz, a Next.js site that Vercel builds and deploys
+This repository is the source of Parker Wahle's homepage at regulad.net, a Next.js site that Vercel builds and deploys
 from `master`. [README.md](README.md) covers running it.
+
+## Domains
+
+- The site is served at `regulad.net`. regulad/homelab's Cloudflare `redirect` Worker sends `www.regulad.net`,
+  `regulad.xyz` and `www.regulad.xyz` to it.
+- The Matrix `.well-known` files (`/.well-known/matrix/client`, `server` and `support`) belong to `regulad.xyz`, the
+  server name in `@regulad:regulad.xyz`. A Worker in regulad/homelab serves them there, so the site has no
+  `.well-known` routes of its own.
 
 ## Version
 

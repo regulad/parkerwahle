@@ -6,9 +6,9 @@ _extends: .github
 repository:
   name: landing
   description: >-
-    Source of Parker Wahle's personal homepage at regulad.xyz, built with
+    Source of Parker Wahle's personal homepage at regulad.net, built with
     Next.js and Tailwind CSS
-  homepage: "https://regulad.xyz"
+  homepage: "https://regulad.net"
   private: false
   # Topics: comma-and-space separated string, NOT a YAML list.
   topics: personal-website, nextjs, react, typescript, tailwindcss, shadcn-ui
