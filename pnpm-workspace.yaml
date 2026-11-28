@@ -8,3 +8,9 @@ allowBuilds:
 # then.
 minimumReleaseAgeExclude:
   - postcss@8.5.34
+
+# snapdom ships an agent skill (its skills/ folder), which pnpm 12 would install for coding agents. Agents here take
+# their instructions from AGENTS.md and Parker's own setup, not from dependencies.
+permissions:
+  '@zumer/snapdom':
+    skills: false

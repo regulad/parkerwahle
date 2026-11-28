@@ -49,6 +49,9 @@ breaking changes, and it declined to adopt SemVer in
 The tsParticles packages are pinned exactly too: `@tsparticles/react` requires `@tsparticles/engine` at its own exact
 version, so the three move together.
 
+`@zumer/snapdom` is pinned exactly: its versions look like SemVer, but it doesn't say it follows SemVer, and its
+releases remove public options within a major, as 3.3.6 dropped `layoutZoom` (its CHANGELOG, checked 2026-11-27).
+
 ## Licence
 
 Free software, under the GNU Affero General Public License, version 3 or (at your option) any later version

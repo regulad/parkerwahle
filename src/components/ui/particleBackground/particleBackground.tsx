@@ -5,6 +5,7 @@ import {loadSlim} from "@tsparticles/slim";
 import type {Engine, ISourceOptions} from "@tsparticles/engine";
 import {clsx} from "clsx";
 import styles from "./particleBackground.module.css";
+import { TILE_BACKDROP } from "../tileTransition/tileTransition";
 
 // ParticlesProvider runs this once per application lifetime, and needs the same function on every render
 async function initEngine(engine: Engine): Promise<void> {
@@ -92,7 +93,7 @@ export default function ParticleBackground() {
     // renders its children once the engine has loaded
     <ParticlesProvider init={initEngine}>
       {/* negative z value here breaks rendering of the mt_grid effect */}
-      <div className={clsx("absolute z-0 w-screen h-full", styles.fadeIn)}>
+      <div className={clsx("absolute z-0 w-screen h-full", styles.fadeIn)} {...{ [TILE_BACKDROP]: "" }}>
         <Particles
           id="tsparticles"
           options={options}

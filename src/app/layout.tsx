@@ -3,6 +3,7 @@ import { Inter, Libre_Franklin } from "next/font/google";
 import { GoogleAnalytics } from "@next/third-parties/google"
 import "./globals.css";
 import { clsx } from "clsx";
+import { TileTransitionProvider } from "@/components/ui/tileTransition/tileTransition";
 
 // The landing property's Google Analytics tag: NEXT_PUBLIC_GA_TAG, which regulad/homelab's
 // tofu/vercel sets from tofu/ga4, read at build time, or the same tag by default.
@@ -32,7 +33,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={clsx(inter.className, libre_franklin.className)}>
-        {children}
+        <TileTransitionProvider>
+          {children}
+        </TileTransitionProvider>
       </body>
       <GoogleAnalytics gaId={GA_TAG} />
     </html>
